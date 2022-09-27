@@ -9,37 +9,32 @@ public class EmployeeWageComputation {
 	public static void main(String[] args) {
 		
 		System.out.println("Welcome to Employee Wage Computation");
-		empAttendance = isEmpPresent();
-		int dailyWage = 0;
+		System.out.println("-------------");
 		
-//		if (empAttendance == 0) {
-//			System.out.println("Employee is present");	
-//			dailyWage = full_Day_Hours*wage_Per_Hour;
-//		}
-//		else if (empAttendance == 1) {
-//			System.out.println("Employee is part time today");
-//			dailyWage = part_Time_Hours*wage_Per_Hour;
-//		}
-//		else {
-//			System.out.println("Employee is absent");
-//		}
-        
-		switch (empAttendance) {
-		case 0:
-			System.out.println("Employee is present");
-			dailyWage = full_Day_Hours*wage_Per_Hour;
-			break;
-		case 1:
-			System.out.println("Employee is part time today");
-			dailyWage = part_Time_Hours*wage_Per_Hour;
-			break;
-
-		default:
-			System.out.println("Employee is absent");
-			break;
+		int dailyWage = 0;
+		int monthlyWage = 0;
+		
+		for (int i = 1; i <= 20; i++) {
+			empAttendance = isEmpPresent();
+			if (empAttendance == 0) {
+				System.out.println("Employee is present");	
+				dailyWage = full_Day_Hours*wage_Per_Hour;
+				monthlyWage += dailyWage;
+			}
+			else if (empAttendance == 1) {
+				System.out.println("Employee is part time today");
+				dailyWage = part_Time_Hours*wage_Per_Hour;
+				monthlyWage += dailyWage;
+			}
+			else {
+				System.out.println("Employee is absent");
+			}
 		}
 		
-		System.out.println("Daily Wage of employee : " + dailyWage);
+		System.out.println("-------------");
+ 	    System.out.println("Monthly wage of employee of 20 working days : " + monthlyWage);
+		
+		
 	}
 
 	static int isEmpPresent() {
