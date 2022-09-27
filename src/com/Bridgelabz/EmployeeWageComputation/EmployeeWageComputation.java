@@ -12,16 +12,31 @@ public class EmployeeWageComputation {
 		empAttendance = isEmpPresent();
 		int dailyWage = 0;
 		
-		if (empAttendance == 0) {
-			System.out.println("Employee is present");	
+//		if (empAttendance == 0) {
+//			System.out.println("Employee is present");	
+//			dailyWage = full_Day_Hours*wage_Per_Hour;
+//		}
+//		else if (empAttendance == 1) {
+//			System.out.println("Employee is part time today");
+//			dailyWage = part_Time_Hours*wage_Per_Hour;
+//		}
+//		else {
+//			System.out.println("Employee is absent");
+//		}
+        
+		switch (empAttendance) {
+		case 0:
+			System.out.println("Employee is present");
 			dailyWage = full_Day_Hours*wage_Per_Hour;
-		}
-		else if (empAttendance == 1) {
+			break;
+		case 1:
 			System.out.println("Employee is part time today");
 			dailyWage = part_Time_Hours*wage_Per_Hour;
-		}
-		else {
+			break;
+
+		default:
 			System.out.println("Employee is absent");
+			break;
 		}
 		
 		System.out.println("Daily Wage of employee : " + dailyWage);
