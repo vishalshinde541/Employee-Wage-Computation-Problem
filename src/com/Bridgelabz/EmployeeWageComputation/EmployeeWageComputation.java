@@ -6,7 +6,7 @@ public class EmployeeWageComputation {
 	public static void main(String[] args) {
 		
 		System.out.println("Welcome to Employee Wage Computation");
-		empAttendance = ispresent();
+		empAttendance = isEmpPresent();
 		
 		if (empAttendance == 0) {
 			System.out.println("Employee is present");	
@@ -16,7 +16,7 @@ public class EmployeeWageComputation {
 		}		
 	}
 
-	static int ispresent() {
+	static int isEmpPresent() {
 		int n1 = (int) (Math.random()*2);
 		return n1;
 		
