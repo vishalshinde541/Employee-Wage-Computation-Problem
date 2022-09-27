@@ -3,6 +3,7 @@ package com.Bridgelabz.EmployeeWageComputation;
 public class EmployeeWageComputation {
 	static int empAttendance;
 	static int full_Day_Hours = 8;
+	static int part_Time_Hours = 4;
 	static int wage_Per_Hour = 20;
 	
 	public static void main(String[] args) {
@@ -15,6 +16,10 @@ public class EmployeeWageComputation {
 			System.out.println("Employee is present");	
 			dailyWage = full_Day_Hours*wage_Per_Hour;
 		}
+		else if (empAttendance == 1) {
+			System.out.println("Employee is part time today");
+			dailyWage = part_Time_Hours*wage_Per_Hour;
+		}
 		else {
 			System.out.println("Employee is absent");
 		}
@@ -23,7 +28,7 @@ public class EmployeeWageComputation {
 	}
 
 	static int isEmpPresent() {
-		int n1 = (int) (Math.random()*2);
+		int n1 = (int) (Math.random()*3);
 		return n1;
 		
 	}
